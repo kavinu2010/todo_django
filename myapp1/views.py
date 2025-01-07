@@ -1,6 +1,9 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+
+from django.views.generic.list import ListView
+from .models import Todo_task
+
 
 # Create your views here.
-def myapp1(request):
-  return HttpResponse('myhome welcome myapp1')
+class Task_List(ListView):
+  model=Todo_task
+  context_object_name='tasks'
